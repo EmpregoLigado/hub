@@ -12,7 +12,7 @@ test: ## Run all the tests
 	go test $(TEST_OPTIONS) -covermode=atomic -coverprofile=coverage.txt -timeout=1m -cover -json $(SOURCE_FILES) | $$(go env GOPATH)/bin/tparse -all
 
 throughput: ## Run the throughput tests
-	go test -v -timeout 60s github.com/leandro-lugaresi/hub -run ^TestThroughput -args -throughput
+	go test -v -timeout 60s github.com/empregoligado/hub -run ^TestThroughput -args -throughput
 
 bench: ## Run the benchmark tests
 	go test -bench=. $(TEST_PATTERN)
